@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Breast Cancer Wisconsin (Diagnostic) </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>radius_mean:{{data_rm}}</p>
+      <p>concavity_mean:{{data_cm}}</p>
+      <p>radius_worst:{{data_rw}}</p>
+      <p>compactness_worst:{{data_csw}}</p>
+      <p>concavity_worst:{{data_cw}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>You <b>will have</b>  Breast Cancer Wisconsin (Diagnostic) in the future: <b>Positive</b></p>
+      {% else %}
+        <p>You <b>will not</b> have  Breast Cancer Wisconsin (Diagnostic) in the future:<b>Negetive</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'ckdApp:ckd' %}">Breast Cancer Predicition</a>
+    <br>
+</div>
+{% endblock %}
